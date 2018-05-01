@@ -7,6 +7,6 @@ package com.github.RymarSergey.MyWebApp.model;
 import java.util.ArrayList;
 
 public class Section {
-    String type;
+    SectionType type;
     ArrayList<String> describe;
 }
