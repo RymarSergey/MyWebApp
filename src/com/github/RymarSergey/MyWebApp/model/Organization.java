@@ -4,4 +4,7 @@ package com.github.RymarSergey.MyWebApp.model;/*
  */
 
 public class Organization {
+    private String  name;
+    private String url;
+
 }
