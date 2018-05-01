@@ -6,6 +6,6 @@ import java.util.List;
 public class Resume {
     private String fullname;
     private String location;
-    private List<Contact> contacts;
-
+    private List<Contact> contactList;
+    private List<Section> sectionList;
 }
