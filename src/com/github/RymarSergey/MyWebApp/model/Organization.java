@@ -8,6 +8,6 @@ import java.util.Collection;
 
 public class Organization {
     private Link  organization;
-    private Collection<Period> periods;
+    private Collection<OrganizationPeriod> periods;
 
 }
