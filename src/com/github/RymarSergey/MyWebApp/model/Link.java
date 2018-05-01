@@ -29,6 +29,14 @@ public class Link {
     }
 
     @Override
+    public String toString() {
+        return "Link{" +
+                "name='" + name + '\'' +
+                ", url='" + url + '\'' +
+                '}';
+    }
+
+    @Override
     public int hashCode() {
 
         return Objects.hash(name, url);
