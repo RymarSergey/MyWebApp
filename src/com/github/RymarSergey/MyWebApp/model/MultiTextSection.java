@@ -6,7 +6,7 @@ package com.github.RymarSergey.MyWebApp.model;
 
 import java.util.Collection;
 
-public class TextSection extends Section {
+public class MultiTextSection extends Section {
     private Collection<String > content;
 
 }
