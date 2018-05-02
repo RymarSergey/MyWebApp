@@ -4,8 +4,18 @@ package com.github.RymarSergey.MyWebApp.model;/*
  */
 
 public enum ContactType {
-    HOME_PHONE,
-    MOBILE,
-    SKYPE,
-    MAIL
+    HOME_PHONE("Домашний телефон "),
+    MOBILE("Мобильный телефон "),
+    SKYPE("Скайп "),
+    MAIL("Почта ");
+
+    private String title;
+
+    ContactType(String title) {
+        this.title = title;
+    }
+
+    public String getTitle() {
+        return title;
+    }
 }
