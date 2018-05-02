@@ -3,8 +3,10 @@ package com.github.RymarSergey.MyWebApp.storage;
 import com.github.RymarSergey.MyWebApp.model.Contact;
 import com.github.RymarSergey.MyWebApp.model.ContactType;
 import com.github.RymarSergey.MyWebApp.model.Resume;
-import org.junit.Before;
+import org.junit.Assert;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 
 /*
  *
@@ -24,8 +26,8 @@ class ArrayStorageTest {
         r1.addContact(new Contact(ContactType.MAIL,"mail1@ya.ru"));
         r1.addContact(new Contact(ContactType.MOBILE,"89818239942"));
     }
-    @Before
-    void befor(){
+    @BeforeEach
+    void setup(){
         arrayStorage.clear();
         arrayStorage.save(r1);
         arrayStorage.save(r2);
@@ -48,6 +50,9 @@ class ArrayStorageTest {
 
     @Test
     void delete() {
+        arrayStorage.delete(r1.getUuid());
+        Assert.assertEquals(2,arrayStorage.size());
+        Assert.assertEquals(null,arrayStorage.load(r1.getUuid()));
     }
 
     @Test
@@ -56,6 +61,6 @@ class ArrayStorageTest {
 
     @Test
     void size() {
-
+        Assert.assertEquals(3,arrayStorage.size());
     }
 }

@@ -14,6 +14,9 @@ public class Resume {
     private List<Contact> contactList=new LinkedList<>();
     private List<Section> sectionList=new LinkedList<>();
 
+    public Resume(Resume resume){
+
+    }
     public Resume(String fullname, String location) {
         this(UUID.randomUUID().toString(),fullname,location);
     }
