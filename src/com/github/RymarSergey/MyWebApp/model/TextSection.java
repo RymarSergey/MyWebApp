@@ -4,6 +4,6 @@ package com.github.RymarSergey.MyWebApp.model;/*
  */
 
 public class TextSection extends Section {
-    private String title;
+   // private String title;
     private String comment;
 }
