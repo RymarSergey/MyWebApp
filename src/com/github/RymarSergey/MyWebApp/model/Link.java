@@ -47,4 +47,12 @@ public class Link {
     public static Link empty(){
         return EMPTY;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getUrl() {
+        return url;
+    }
 }
