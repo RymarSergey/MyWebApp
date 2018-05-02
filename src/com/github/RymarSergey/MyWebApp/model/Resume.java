@@ -1,6 +1,7 @@
 package com.github.RymarSergey.MyWebApp.model;
 
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
@@ -10,8 +11,8 @@ public class Resume {
     private String fullname;
     private String location;
     private String homePage;
-    private List<Contact> contactList;
-    private List<Section> sectionList;
+    private List<Contact> contactList=new LinkedList<>();
+    private List<Section> sectionList=new LinkedList<>();
 
     public Resume(String fullname, String location) {
         this(UUID.randomUUID().toString(),fullname,location);
@@ -58,5 +59,12 @@ public class Resume {
 
     public List<Section> getSectionList() {
         return sectionList;
+    }
+    public void addSection(Section section){
+
+        sectionList.add(section);
+    }
+    public void addContact(Contact contact){
+        contactList.add(contact);
     }
 }
