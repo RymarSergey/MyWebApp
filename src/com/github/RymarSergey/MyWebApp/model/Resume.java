@@ -3,6 +3,7 @@ package com.github.RymarSergey.MyWebApp.model;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 
 public class Resume {
     private String uuid;
@@ -13,9 +14,13 @@ public class Resume {
     private List<Section> sectionList;
 
     public Resume(String fullname, String location) {
+        this(UUID.randomUUID().toString(),fullname,location);
+    }
+
+    public Resume(String uuid, String fullname, String location) {
+        this.uuid = uuid;
         this.fullname = fullname;
         this.location = location;
-
     }
 
     @Override
@@ -29,5 +34,29 @@ public class Resume {
     @Override
     public int hashCode() {
         return Objects.hash(uuid);
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getHomePage() {
+        return homePage;
+    }
+
+    public List<Contact> getContactList() {
+        return contactList;
+    }
+
+    public List<Section> getSectionList() {
+        return sectionList;
     }
 }
