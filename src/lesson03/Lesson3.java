@@ -4,6 +4,7 @@ package lesson03;/*
  */
 
 import com.github.RymarSergey.MyWebApp.model.Link;
+import com.github.RymarSergey.MyWebApp.model.Resume;
 
 import java.lang.reflect.Field;
 
@@ -15,5 +16,16 @@ public class Lesson3 {
 
         Link l=new Link("fghthd","URL");
         System.out.println(f.get(l));
+        System.out.println(l instanceof Link);
+        System.out.println(Link.class.isInstance(l));
+
+        //массивы
+        Resume[] resumes=new Resume[10];
+        System.out.println(resumes.getClass());
+        System.out.println(resumes.length);
+
+        //пробуем обмануть
+       // ((Object[])resumes)[0] = l;
+
     }
 }
