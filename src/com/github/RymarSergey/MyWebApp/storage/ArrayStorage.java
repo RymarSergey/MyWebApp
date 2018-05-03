@@ -22,7 +22,7 @@ public class ArrayStorage implements IStorage {
     @Override
     public void save(Resume r) {
         for (int index = 0; index <=capacity ; index++) {
-            if ((resumesArray[index]!=null) && (r.equals(resumesArray[index]))){
+            if ((resumesArray[index]!=null) && (r.getUuid().equals(resumesArray[index].getUuid()))){
                 return;
             }
         }
