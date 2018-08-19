@@ -17,6 +17,14 @@ public class Contact {
         return value;
     }
 
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "type=" + type +
+                ", value='" + value + '\'' +
+                '}';
+    }
+
     public ContactType getType() {
         return type;
     }

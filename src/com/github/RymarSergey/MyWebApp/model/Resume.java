@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-public class Resume {
+public class Resume implements Comparable<Resume>{
     private String uuid;
     private String fullname;
     private String location;
@@ -28,11 +28,52 @@ public class Resume {
     }
 
     @Override
+    public String toString() {
+        return "Resume{" +
+                "uuid='" + uuid + '\'' +
+                ", fullname='" + fullname + '\'' +
+                ", location='" + location + '\'' +
+                ", homePage='" + homePage + '\'' +
+                ", contactList=" + contactList +
+                ", sectionList=" + sectionList +
+                '}';
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setHomePage(String homePage) {
+        this.homePage = homePage;
+    }
+
+    public void setContactList(List<Contact> contactList) {
+        this.contactList = contactList;
+    }
+
+    public void setSectionList(List<Section> sectionList) {
+        this.sectionList = sectionList;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Resume resume = (Resume) o;
-        return Objects.equals(uuid, resume.uuid);
+        return Objects.equals(uuid, resume.uuid) &&
+                Objects.equals(fullname, resume.fullname) &&
+                Objects.equals(location, resume.location) &&
+                Objects.equals(homePage, resume.homePage) &&
+                Objects.equals(contactList, resume.contactList) &&
+                Objects.equals(sectionList, resume.sectionList);
     }
 
     @Override
@@ -69,5 +110,11 @@ public class Resume {
     }
     public void addContact(Contact contact){
         contactList.add(contact);
+    }
+
+
+    @Override
+    public int compareTo(Resume o) {
+        return fullname.compareTo(o.fullname);
     }
 }
